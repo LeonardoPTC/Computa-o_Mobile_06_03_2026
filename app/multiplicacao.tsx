@@ -1,7 +1,6 @@
 import { useNavigation } from "expo-router";
 import { useState } from "react";
-import { Button, Text, View } from "react-native";
-import { TextInput } from "react-native-gesture-handler";
+import { Button, Text, TextInput, View } from "react-native";
 import { NativeStackNavigationProp } from "react-native-screens/lib/typescript/native-stack/types";
 type Screens = {
     index: undefined;
@@ -33,23 +32,24 @@ export default function Index() {
                 flex: 1,
                 justifyContent: "center",
                 alignItems: "center",
+                marginTop: -70
             }}
         >
             <View style={{ margin: 20 }}>
                 <Text style={{ fontSize: 30, fontWeight: "bold" }}>Multiplicação</Text>
             </View>
-            <View>
-                <Text>Digite o primeiro número a ser multiplicado: </Text>
-                <TextInput style={{ width: '100%', height: '100%', borderColor: 'black', borderStyle: 'solid', borderWidth: 1, borderRadius: 5 }} onChangeText={setValor1} ></TextInput>
+            <View style={{ width: '80%', marginBottom: 15}}>
+                <Text style={{width: '100%'}}>Digite o primeiro número a ser multiplicado: </Text>
+                <TextInput style={{ width: '100%', paddingHorizontal: 10, borderColor: 'black', borderWidth: 1, borderRadius: 5 }} onChangeText={setValor1} ></TextInput>
             </View>
 
-            <View>
+            <View style={{ width: '80%', marginBottom: 15}}>
                 <Text>Digite o segundo número a ser multiplicado: </Text>
-                <TextInput style={{ width: '100%', height: '100%', borderColor: 'black', borderStyle: 'solid', borderWidth: 1, borderRadius: 5 }} onChangeText={setValor2}></TextInput>
+                <TextInput style={{ width: '100%', borderColor: 'black', borderStyle: 'solid', borderWidth: 1, borderRadius: 5 }} onChangeText={setValor2}></TextInput>
             </View>
             <View style={{ margin: 20 }}><Text>Resultado: {result.toFixed(2)}</Text></View>
             <View>
-                <Button title="Multiplicar" onPress={() => calcularMultiplicacao(num1, num2)} />
+                <Button title="Calcular" onPress={() => calcularMultiplicacao(num1, num2)} />
             </View>
         </View>
     );

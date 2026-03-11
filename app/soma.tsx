@@ -32,23 +32,24 @@ export default function Index() {
                 flex: 1,
                 justifyContent: "center",
                 alignItems: "center",
+                marginTop: -70
             }}
         >
             <View style={{ margin: 20 }}>
                 <Text style={{ fontSize: 30, fontWeight: "bold" }}>Soma</Text>
             </View>
-            <View>
-                <Text style={{width: '80%'}}>Digite o primeiro número a ser somado: </Text>
-                <TextInput style={{ width: '100%', height: '100%', borderColor: 'black', borderStyle: 'solid', borderWidth: 1, borderRadius: 5 }} onChangeText={setValor1} ></TextInput>
+            <View style={{ width: '80%', marginBottom: 15}}>
+                <Text style={{width: '100%'}}>Digite o primeiro número a ser somado: </Text>
+                <TextInput style={{ width: '100%', paddingHorizontal: 10, borderColor: 'black', borderWidth: 1, borderRadius: 5 }} onChangeText={setValor1} ></TextInput>
             </View>
 
-            <View>
+            <View style={{ width: '80%', marginBottom: 15}}>
                 <Text>Digite o segundo número a ser somado: </Text>
-                <TextInput style={{ width: '100%', height: '100%', borderColor: 'black', borderStyle: 'solid', borderWidth: 1, borderRadius: 5 }} onChangeText={setValor2}></TextInput>
+                <TextInput style={{ width: '100%', borderColor: 'black', borderStyle: 'solid', borderWidth: 1, borderRadius: 5 }} onChangeText={setValor2}></TextInput>
             </View>
             <View style={{ margin: 20 }}><Text>Resultado: {result.toFixed(2)}</Text></View>
             <View>
-                <Button title="Somar" onPress={() => calcularSoma(num1, num2)} />
+                <Button title="Calcular" onPress={() => calcularSoma(num1, num2)} />
             </View>
         </View>
     );
